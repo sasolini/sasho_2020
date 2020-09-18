@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@500&display=swap');
+
+//PAGE
+$page-width: 1344px;
+
+//FONTS
+$body-fonts: 'Lato', sans-serif;
+$title-fonts: 'Oswald', sans-serif;
+$font-size: 2rem;
+$font-size-l: 2.6rem;
+$font-size-xl: $font-size * 4;
+
+//COLORS
+$black: hsl(250, 17%, 19%);
+$white: hsl(0, 0%, 100%);
+$purple: hsl(243, 100%, 68%);
+$purple-dark: hsl(242, 34%, 14%);
+$purple-light: hsl(244, 100%, 94%);
+// $purple-darker: hsl(245, 37%, 32%);
+
+//SPACING
+
+$spacing-s: $font-size * 0.5;
+$spacing: $font-size;
+$spacing-l: $font-size * 1.5;

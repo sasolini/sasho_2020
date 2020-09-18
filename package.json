@@ -1,0 +1,22 @@
+{
+  "name": "website_2020_v2",
+  "version": "1.0.0",
+  "description": "Personal webpage",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sasho Hribernik",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "2.1.2",
+    "sass": "^1.26.10"
+  }
+}

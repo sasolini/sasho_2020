@@ -1,0 +1,282 @@
+@use './global.scss';
+@import './variables.scss';
+
+.logo {
+  font-family: $title-fonts;
+  font-size: $font-size * 2;
+  margin-top: -0.8rem;
+
+  span {
+    color: $purple;
+  }
+}
+
+header {
+  background-color: $white;
+  border-bottom: 1px solid $purple;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    font-size: $font-size-l;
+
+    ul {
+      display: flex;
+      align-items: center;
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+      padding: $spacing-s $spacing;
+      border-bottom: 4px solid transparent;
+      &:hover:not(:last-child) {
+        color: $purple;
+        border-bottom: 4px solid $purple;
+      }
+    }
+
+    svg {
+      height: 4rem;
+      fill: $black;
+      width: auto;
+
+      &:hover {
+        fill: $purple;
+      }
+    }
+  }
+}
+
+.hero {
+  .img-wrapper {
+    padding-bottom: 13rem;
+    align-items: flex-end;
+  }
+
+  a {
+    display: inline-block;
+  }
+}
+
+.about {
+  .img-wrapper {
+    padding-top: 6rem;
+    align-items: flex-start;
+  }
+}
+
+.stack {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-wrapper {
+    text-align: center;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 12rem);
+    justify-content: space-between;
+    list-style: none;
+    text-align: center;
+    gap: $spacing-l * 2;
+  }
+
+  li {
+    height: 100%;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  h3 {
+    margin: $spacing-s 0;
+    font-size: $font-size-l;
+  }
+
+  img {
+    height: 12rem;
+    max-width: 12rem;
+  }
+}
+
+.projects {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-wrapper {
+    text-align: center;
+  }
+
+  .spacer {
+    width: $spacing-l * 2;
+  }
+
+  .projects-wrapper {
+    margin-top: $spacing-l;
+  }
+
+  .project {
+    display: flex;
+    padding: $spacing-l * 2;
+    background-color: $purple-dark;
+    background: linear-gradient(-40deg, $purple-dark 0%, #483d56 100%);
+
+    &:not(:last-child) {
+      margin-bottom: $spacing-l * 2;
+    }
+
+    .img-wrapper {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+
+    .project-info {
+      flex: 1.45;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h3 {
+      font-size: $font-size-l * 1.5;
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    ul {
+      font-family: $title-fonts;
+      list-style: none;
+    }
+
+    .project-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: auto;
+
+      a {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.contact {
+  min-height: 50vh;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-wrapper {
+    text-align: center;
+  }
+
+  .form-wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-top: $spacing-l * 2;
+  }
+
+  .img-wrapper {
+    flex: 1;
+    padding-top: $spacing-l;
+  }
+
+  form {
+    max-width: 60rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-l;
+    flex: 1;
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: $spacing-s;
+      background-color: $purple-light;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      outline-color: $purple;
+      color: $purple-dark;
+      margin-top: $spacing-s;
+
+      &:hover {
+        border: 1px solid $purple;
+      }
+    }
+
+    label {
+      color: $purple;
+
+      &[for='mail'],
+      &[for='msg'] {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    textarea {
+      height: 25rem;
+    }
+
+    ::placeholder {
+      color: $purple;
+      opacity: 0.7;
+    }
+
+    button {
+      max-width: 15rem;
+    }
+  }
+}
+
+footer {
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 15rem;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  p {
+    color: $purple;
+  }
+
+  .socials {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      height: 6rem;
+      width: auto;
+    }
+  }
+}

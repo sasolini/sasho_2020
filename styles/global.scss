@@ -1,0 +1,129 @@
+@use './normalize.scss';
+@import './variables.scss';
+
+//INIT
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-family: $body-fonts;
+  font-size: $font-size;
+  line-height: $font-size * 1.4;
+  font-weight: 400;
+  color: $black;
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  text-decoration: none;
+
+  &:not([href]) {
+    display: block;
+    position: relative;
+    top: -15.1rem; //header hight + section padding
+    visibility: hidden;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-fonts;
+  font-weight: 400;
+}
+
+h1,
+h2 {
+  font-size: $font-size-xl;
+  line-height: $font-size-xl * 1.2;
+  margin: $spacing-s 0 $spacing-l;
+}
+
+//GLOBAL CLASSES
+
+p {
+  margin: $spacing 0;
+}
+
+section {
+  padding: $spacing-l * 2 0;
+}
+
+.main {
+  .content-wrapper {
+    flex: 1.3;
+  }
+
+  .img-wrapper {
+    flex: 1;
+    display: flex;
+  }
+
+  .spacer {
+    flex-basis: $spacing-l * 2;
+  }
+}
+
+.secondary {
+  color: $white;
+  background: $purple-dark;
+  background: linear-gradient(140deg, $purple-dark 0%, #483d56 100%);
+}
+
+.container {
+  display: flex;
+  padding: $spacing $spacing;
+  max-width: $page-width;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  width: 100%;
+}
+
+.section-title {
+  color: $purple;
+  font-size: $font-size-l;
+}
+
+button,
+.abtn {
+  font-family: $title-fonts;
+  text-transform: capitalize;
+  padding: $spacing $spacing-l;
+  margin: $spacing 0;
+  color: $white;
+  border: 2px solid $purple;
+  border-radius: 4px;
+  background-color: $purple;
+  transition: all 150ms ease-in-out;
+  outline-color: $purple;
+
+  &:hover,
+  &:focus {
+    color: $purple;
+    border: 2px solid $purple;
+    background-color: $white;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
