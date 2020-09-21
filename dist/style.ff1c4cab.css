@@ -580,6 +580,8 @@ nav li:last-child {
 @media (max-width: 767px) {
   nav li {
     margin: 1rem 0;
+    width: 100%;
+    text-align: center;
   }
 }
 nav svg {
@@ -661,7 +663,7 @@ nav svg:hover {
   }
 }
 .mobile-menu-wrapper .mobile-menu {
-  height: 42rem;
+  height: 60rem;
   background-color: #645cff;
 }
 .mobile-menu-wrapper .backdrop {

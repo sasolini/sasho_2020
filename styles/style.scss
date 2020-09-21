@@ -61,6 +61,8 @@ nav {
 
     @include md {
       margin: $spacing-s 0;
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -149,7 +151,7 @@ nav {
   }
 
   .mobile-menu {
-    height: 42rem;
+    height: 60rem;
     background-color: $purple;
   }
 
