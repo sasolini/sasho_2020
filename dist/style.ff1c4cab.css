@@ -560,6 +560,13 @@ nav li {
   border-bottom: 4px solid transparent;
   margin-bottom: -0.8rem;
 }
+@media (max-width: 767px) {
+  nav li {
+    margin: 1rem 0;
+    width: 100%;
+    text-align: center;
+  }
+}
 nav li:hover:not(:last-child) {
   border-bottom: 4px solid #645cff;
 }
@@ -577,12 +584,8 @@ nav li:hover {
 nav li:last-child {
   margin-bottom: -1.2rem;
 }
-@media (max-width: 767px) {
-  nav li {
-    margin: 1rem 0;
-    width: 100%;
-    text-align: center;
-  }
+nav li a {
+  width: 100%;
 }
 nav svg {
   height: 2.6rem;

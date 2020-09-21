@@ -41,6 +41,12 @@ nav {
     border-bottom: 4px solid transparent;
     margin-bottom: -0.8rem;
 
+    @include md {
+      margin: $spacing-s 0;
+      width: 100%;
+      text-align: center;
+    }
+
     &:hover:not(:last-child) {
       border-bottom: 4px solid $purple;
     }
@@ -59,10 +65,8 @@ nav {
       margin-bottom: -1.2rem;
     }
 
-    @include md {
-      margin: $spacing-s 0;
+    a {
       width: 100%;
-      text-align: center;
     }
   }
 
