@@ -556,19 +556,12 @@ nav ul {
 }
 nav li {
   list-style: none;
-  padding: 1rem 2rem;
-  border-bottom: 4px solid transparent;
-  margin-bottom: -0.8rem;
 }
 @media (max-width: 767px) {
   nav li {
-    margin: 1rem 0;
     width: 100%;
     text-align: center;
   }
-}
-nav li:hover:not(:last-child) {
-  border-bottom: 4px solid #645cff;
 }
 nav li:hover {
   color: #645cff;
@@ -581,11 +574,31 @@ nav li:hover {
     fill: initial;
   }
 }
-nav li:last-child {
-  margin-bottom: -1.2rem;
-}
-nav li a {
+nav a {
+  display: block;
+  padding: 1rem 2rem;
   width: 100%;
+  border-bottom: 4px solid transparent;
+}
+nav a:hover {
+  color: #645cff;
+}
+@media (max-width: 767px) {
+  nav a:hover {
+    color: white;
+    background-color: #181830;
+  }
+}
+nav a:hover svg {
+  fill: #645cff;
+}
+nav a:hover:not(.icon) {
+  border-bottom: 4px solid #645cff;
+}
+@media (max-width: 767px) {
+  nav a {
+    padding: 2rem 2rem;
+  }
 }
 nav svg {
   height: 2.6rem;
@@ -596,9 +609,6 @@ nav svg {
   nav svg {
     fill: white;
   }
-}
-nav svg:hover {
-  fill: #645cff;
 }
 
 .main-header {
@@ -671,7 +681,7 @@ nav svg:hover {
 }
 .mobile-menu-wrapper .backdrop {
   background-color: #2b2839;
-  opacity: 0.25;
+  opacity: 0.33;
   height: 100%;
 }
 

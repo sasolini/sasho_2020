@@ -27,6 +27,7 @@ a {
   font-size: inherit;
   text-decoration: none;
 
+  //anchors
   &:not([href]) {
     display: block;
     position: relative;

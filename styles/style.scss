@@ -37,18 +37,10 @@ nav {
 
   li {
     list-style: none;
-    padding: $spacing-s $spacing;
-    border-bottom: 4px solid transparent;
-    margin-bottom: -0.8rem;
 
     @include md {
-      margin: $spacing-s 0;
       width: 100%;
       text-align: center;
-    }
-
-    &:hover:not(:last-child) {
-      border-bottom: 4px solid $purple;
     }
 
     &:hover {
@@ -60,13 +52,33 @@ nav {
         }
       }
     }
+  }
 
-    &:last-child {
-      margin-bottom: -1.2rem;
+  a {
+    display: block;
+    padding: $spacing-s $spacing;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+
+    &:hover {
+      color: $purple;
+
+      @include md {
+        color: $white;
+        background-color: $purple-dark;
+      }
+
+      svg {
+        fill: $purple;
+      }
+
+      &:not(.icon) {
+        border-bottom: 4px solid $purple;
+      }
     }
 
-    a {
-      width: 100%;
+    @include md {
+      padding: $spacing $spacing;
     }
   }
 
@@ -77,10 +89,6 @@ nav {
 
     @include md {
       fill: $white;
-    }
-
-    &:hover {
-      fill: $purple;
     }
   }
 }
@@ -161,7 +169,7 @@ nav {
 
   .backdrop {
     background-color: $black;
-    opacity: 0.25;
+    opacity: 0.33;
     height: 100%;
   }
 }
