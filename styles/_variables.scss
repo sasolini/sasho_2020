@@ -2,13 +2,22 @@
 
 //PAGE
 $page-width: 1344px;
+//Break points
+$screen-xs: 400px;
+$screen-sm: 600px;
+$screen-md: 768px - 1px;
+$screen-lg: 1024px - 1px;
+$screen-xl: 1280px - 1px;
 
 //FONTS
 $body-fonts: 'Lato', sans-serif;
 $title-fonts: 'Oswald', sans-serif;
 $font-size: 2rem;
 $font-size-l: 2.6rem;
-$font-size-xl: $font-size * 4;
+$font-size-xl: 7rem;
+$font-size-xxl: 9rem;
+$font-size-ml: 5.6rem;
+$font-size-mxl: 6.8rem;
 
 //COLORS
 $black: hsl(250, 17%, 19%);

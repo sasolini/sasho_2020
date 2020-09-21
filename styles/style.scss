@@ -1,4 +1,5 @@
 @use './global.scss';
+@import './mixins.scss';
 @import './variables.scss';
 
 .logo {
@@ -17,41 +18,145 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+}
 
-  .main-header {
+nav {
+  font-size: $font-size-l;
+
+  ul {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin: 0;
+
+    @include md {
+      flex-direction: column;
+      color: $white;
+      margin: $spacing-l 0;
+    }
   }
 
+  li {
+    list-style: none;
+    padding: $spacing-s $spacing;
+    border-bottom: 4px solid transparent;
+    margin-bottom: -0.8rem;
+
+    &:hover:not(:last-child) {
+      border-bottom: 4px solid $purple;
+    }
+
+    &:hover {
+      color: $purple;
+      @include md {
+        color: initial;
+        svg {
+          fill: initial;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: -1.2rem;
+    }
+
+    @include md {
+      margin: $spacing-s 0;
+    }
+  }
+
+  svg {
+    height: $font-size-l;
+    fill: $black;
+    width: auto;
+
+    @include md {
+      fill: $white;
+    }
+
+    &:hover {
+      fill: $purple;
+    }
+  }
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 9.4rem;
+
   nav {
-    font-size: $font-size-l;
-
-    ul {
-      display: flex;
-      align-items: center;
-      margin: 0;
+    @include md {
+      display: none;
     }
+  }
+}
 
-    li {
-      list-style: none;
-      padding: $spacing-s $spacing;
-      border-bottom: 4px solid transparent;
-      &:hover:not(:last-child) {
-        color: $purple;
-        border-bottom: 4px solid $purple;
-      }
-    }
+.github-icon:after {
+  content: 'GitHub';
+  margin-bottom: 3px;
+}
 
+.hamburger-btn {
+  display: none;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  background-color: unset;
+  border: none;
+  margin: 0;
+  padding: 1rem 1.6rem 0.8rem 1.6rem;
+
+  @include md {
+    display: block;
+  }
+
+  &:hover,
+  &:active {
     svg {
-      height: 4rem;
-      fill: $black;
-      width: auto;
-
-      &:hover {
-        fill: $purple;
-      }
+      fill: $purple;
     }
+  }
+
+  svg {
+    height: 4.4rem;
+    width: auto;
+  }
+}
+
+.mobile-menu-wrapper {
+  position: absolute;
+  top: 9.4rem;
+  right: 0;
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  transition: height 200ms ease;
+  overflow: hidden;
+
+  &.open {
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.95;
+    visibility: visible;
+  }
+
+  @include md {
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mobile-menu {
+    height: 42rem;
+    background-color: $purple;
+  }
+
+  .backdrop {
+    background-color: $black;
+    opacity: 0.25;
+    height: 100%;
   }
 }
 
@@ -63,13 +168,6 @@ header {
 
   a {
     display: inline-block;
-  }
-}
-
-.about {
-  .img-wrapper {
-    padding-top: 6rem;
-    align-items: flex-start;
   }
 }
 
@@ -90,6 +188,11 @@ header {
     list-style: none;
     text-align: center;
     gap: $spacing-l * 2;
+
+    @include md {
+      grid-template-columns: repeat(2, 12rem);
+      justify-content: space-evenly;
+    }
   }
 
   li {
@@ -112,6 +215,17 @@ header {
   }
 }
 
+.about {
+  .img-wrapper {
+    padding-top: 6rem;
+    align-items: flex-start;
+  }
+}
+
+.img-wrapper.mobile-only {
+  padding: 0 $spacing-s;
+}
+
 .projects {
   .container {
     display: flex;
@@ -129,55 +243,78 @@ header {
   .projects-wrapper {
     margin-top: $spacing-l;
   }
+}
 
-  .project {
+.project {
+  display: flex;
+  padding: $spacing-l * 2;
+  background-color: $purple-dark;
+  background: linear-gradient(-40deg, $purple-dark 0%, #483d56 100%);
+
+  @include md {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $spacing-l * 2;
+  }
+
+  .img-wrapper {
+    flex: 1;
+  }
+
+  .project-info {
+    flex: 1.45;
     display: flex;
-    padding: $spacing-l * 2;
-    background-color: $purple-dark;
-    background: linear-gradient(-40deg, $purple-dark 0%, #483d56 100%);
+    flex-direction: column;
 
-    &:not(:last-child) {
-      margin-bottom: $spacing-l * 2;
+    @include md {
+      padding: 0 $spacing $spacing $spacing;
     }
+  }
 
-    .img-wrapper {
-      flex: 1;
-      overflow: hidden;
+  h3 {
+    font-size: $font-size-l * 1.5;
+    line-height: $font-size-l * 1.8;
+    margin-top: 0;
+
+    @include md {
+      margin-top: revert;
     }
+  }
 
-    img {
-      object-fit: cover;
-      height: 100%;
-    }
+  p {
+    margin-top: 0;
+  }
 
-    .project-info {
-      flex: 1.45;
-      display: flex;
+  ul {
+    font-family: $title-fonts;
+    list-style: none;
+  }
+
+  .project-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+
+    @include sm {
       flex-direction: column;
     }
 
-    h3 {
-      font-size: $font-size-l * 1.5;
-      margin-top: 0;
-    }
+    a {
+      margin: 0;
+      text-align: center;
 
-    p {
-      margin-top: 0;
-    }
-
-    ul {
-      font-family: $title-fonts;
-      list-style: none;
-    }
-
-    .project-links {
-      display: flex;
-      justify-content: space-between;
-      margin-top: auto;
-
-      a {
-        margin: 0;
+      @include sm {
+        margin-top: $spacing;
       }
+    }
+  }
+
+  .code {
+    span {
+      color: hsl(17deg 100% 42%);
     }
   }
 }
@@ -201,7 +338,6 @@ header {
   }
 
   .img-wrapper {
-    flex: 1;
     padding-top: $spacing-l;
   }
 
@@ -211,6 +347,10 @@ header {
     grid-template-columns: repeat(2, 1fr);
     gap: $spacing-l;
     flex: 1;
+
+    @include lg {
+      margin: 0 auto;
+    }
 
     input,
     textarea {
@@ -236,6 +376,13 @@ header {
       &[for='msg'] {
         grid-column: 1 / span 2;
       }
+
+      @include sm {
+        &[for='name'],
+        &[for='company'] {
+          grid-column: 1 / span 2;
+        }
+      }
     }
 
     textarea {
@@ -249,6 +396,7 @@ header {
 
     button {
       max-width: 15rem;
+      margin-top: 0;
     }
   }
 }
@@ -259,20 +407,34 @@ footer {
     justify-content: space-between;
     align-items: center;
     min-height: 15rem;
+
+    @include sm {
+      flex-direction: column;
+      padding: $spacing-l $spacing-s;
+    }
   }
 
   .logo {
     flex: 1;
   }
 
-  p {
+  .copyright {
     color: $purple;
+
+    @include sm {
+      order: 2;
+      margin-top: $spacing-l;
+    }
   }
 
   .socials {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+
+    @include sm {
+      display: none;
+    }
 
     img {
       height: 6rem;
