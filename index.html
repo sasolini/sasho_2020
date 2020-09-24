@@ -205,6 +205,7 @@
               
               <ul>
                 <li>React</li>
+                <li>Redux</li>
                 <li>Styled Components</li>
                 <li>Firebase</li>
                 <li>Heroku</li>
@@ -234,16 +235,16 @@
           <div class="spacer"></div>
           <form method='POST' data-netlify='true'>
             <label for="name">Name*:
-              <input type="text" id="name" name="name" placeholder="John Doe">
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
             </label>
             <label for="company">Company:
               <input type="text" id="company" name="company" placeholder="Company name">
             </label>
             <label for="mail">Email*:
-              <input type="email" id="mail" name="mail" placeholder="john.doe@email.com">
+              <input type="email" id="mail" name="mail" placeholder="john.doe@email.com" required>
             </label>
             <label for="msg">Message*:
-              <textarea id='msg' name='msg' placeholder='How can I help?'></textarea>
+              <textarea id='msg' name='msg' placeholder='How can I help?' required></textarea>
             </label>
             <button name='submit' type="submit" value="Submit">Send</button>
           </form>
